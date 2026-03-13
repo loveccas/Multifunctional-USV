@@ -14,6 +14,7 @@
 <img title="" src="./media/心海湖Astar路径.png" alt="" width="340"><img title="" src="./media/航路点折线路径.png" alt="" width="331">
 路径剪枝后得到如下9个航路点： [(1065, 1039), (1046, 1006), (1045, 1000), (1043, 993), (1042, 988), (1039, 979), (1034, 969), (1027, 961), (89, 106)]，用八阶贝塞尔曲线拟合,得到t参数化路径
 **对于参数 $ t \in [0, 1] $，$ n $ 阶贝塞尔曲线的参数方程为：**
+
 \[
 P(t) = \sum_{k=0}^{n} C(n,k) \cdot t^k \cdot (1 - t)^{n-k} \cdot P_k\]其中：
 \[
@@ -21,13 +22,17 @@ C(n,k) = \frac{n!}{k!(n-k)!}
 \]为组合数
 \[
 P_k = (x_k, y_k)
-\]为第 $ k $ 个控制点
+\]
+为第 $ k $ 个控制点
 
 计算得八阶贝塞尔曲线方程为：
 \[
 x(t) = 1 \cdot (1 - t)^8 \cdot 1065 + 8 \cdot t \cdot (1 - t)^7 \cdot 1046 + 28 \cdot t^2 \cdot (1 - t)^6 \cdot 1045 + 56 \cdot t^3 \cdot (1 - t)^5 \cdot 10432 + 70 \cdot t^4 \cdot (1 - t)^4 \cdot 1042 + 56 \cdot t^5 \cdot (1 - t)^3 \cdot 1039 + 28 \cdot t^6 \cdot (1 - t)^2 \cdot 10343 + 8 \cdot t^7 \cdot (1 - t) \cdot 1027 + 1 \cdot t^8 \cdot 89
-\]\[
-y(t) = 1 \cdot (1 - t)^8 \cdot 1039 + 8 \cdot t \cdot (1 - t)^7 \cdot 1006 + 28 \cdot t^2 \cdot (1 - t)^6 \cdot 1000 + 56 \cdot t^3 \cdot (1 - t)^5 \cdot 9936 + 70 \cdot t^4 \cdot (1 - t)^4 \cdot 988 + 56 \cdot t^5 \cdot (1 - t)^3 \cdot 979 + 28 \cdot t^6 \cdot (1 - t)^2 \cdot 9697 + 8 \cdot t^7 \cdot (1 - t) \cdot 961 + 1 \cdot t^8 \cdot 106\]下图中绿色曲线为贝塞尔拟合曲线
+\]
+\[
+y(t) = 1 \cdot (1 - t)^8 \cdot 1039 + 8 \cdot t \cdot (1 - t)^7 \cdot 1006 + 28 \cdot t^2 \cdot (1 - t)^6 \cdot 1000 + 56 \cdot t^3 \cdot (1 - t)^5 \cdot 9936 + 70 \cdot t^4 \cdot (1 - t)^4 \cdot 988 + 56 \cdot t^5 \cdot (1 - t)^3 \cdot 979 + 28 \cdot t^6 \cdot (1 - t)^2 \cdot 9697 + 8 \cdot t^7 \cdot (1 - t) \cdot 961 + 1 \cdot t^8 \cdot 106
+\]
+下图中绿色曲线为贝塞尔拟合曲线
 <img title="" src="./media/八阶贝塞尔拟合路径.png" alt="" width="400" data-align="center">
 
 #### 2.1.2 路径跟踪
